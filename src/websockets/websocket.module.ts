@@ -5,6 +5,6 @@ import { ProductDashboardGateway } from "./product-dashboard.gateway";
 
 @Module({
     providers: [ChatGateway, PaymentGateway, ProductDashboardGateway],
-    exports: [ProductDashboardGateway]
+    exports: [ChatGateway, PaymentGateway, ProductDashboardGateway]
 })
 export class WebsocketModule { }

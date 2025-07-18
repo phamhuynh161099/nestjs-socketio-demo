@@ -21,14 +21,13 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection, OnGatewa
     }
 
     @SubscribeMessage('send-message')
-    handleMessage(@MessageBody() message: string): void {
+    handleMessage(client: Socket, @MessageBody() message: string): void {
         console.log('io/message', message);
 
         this.server.emit('receive-message', {
             message: "Jong Gun",
             from: "server"
         });
-
         this.server.emit('message', message);
     }
 
